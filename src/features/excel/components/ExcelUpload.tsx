@@ -1,8 +1,9 @@
 import { parseExcel } from "../../../hooks/excel.utils";
 import { useExcel } from "../../../hooks/useExcel";
 
+
 function ExcelUpload() {
-  const { setData } = useExcel();
+  const { setData, clearData } = useExcel();
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -17,12 +18,21 @@ function ExcelUpload() {
   };
 
   return (
-    <input
-      type="file"
-      accept=".xlsx, .xls, .csv"
-      onChange={handleUpload}
-      className="block"
-    />
+    <div className="flex gap-4 my-4">
+      <input
+        type="file"
+        accept=".xlsx, .xls, .csv"
+        onChange={handleUpload}
+        className="block"
+      />
+
+      <button
+        onClick={clearData}
+        className="px-4 py-2 bg-red-500 text-white rounded"
+      >
+        Clear Data
+      </button>
+    </div>
   );
 }
 
