@@ -1,13 +1,13 @@
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import { ExcelProvider } from './hooks/useExcel'
-import Dashboard from './pages/dashboard'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
 
   return (
-    <ExcelProvider>
-      <Dashboard />
-    </ExcelProvider>
+    <BrowserRouter>
+      <AppRoutes/>
+    </BrowserRouter>
   )
 }
 
