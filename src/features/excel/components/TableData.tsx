@@ -2,8 +2,7 @@ import { useExcel } from "../../../hooks/useExcel";
 
 function TableData() {
   const { data } = useExcel();
-
-  // Ambil semua kolom unik dari seluruh data
+  
   const headers = Array.from(
     new Set(data.flatMap((row) => Object.keys(row)))
   );

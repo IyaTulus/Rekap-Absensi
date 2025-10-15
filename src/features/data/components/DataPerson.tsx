@@ -33,7 +33,6 @@ function DataPerson() {
             )}
         </>
     );
-    // return <div>DATA</div>
 }
 
 export default DataPerson;
